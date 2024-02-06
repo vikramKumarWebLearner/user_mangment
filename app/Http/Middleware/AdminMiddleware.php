@@ -16,7 +16,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (! Auth::user()->role_as == '1') {
-            return redirect('admin/dashboard')->with('status', 'Access Denid. As you Not Admin');
+            return redirect('dashboard')->with('status', 'Access Denid. As you Not Admin');
         }
         return $next($request);
     }
